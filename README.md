@@ -1,6 +1,6 @@
 # cyber漫剧
 
-Windows x64 安装包与正式更新发布仓库。
+Windows x64 与 macOS（苹果芯片）安装包、正式更新发布仓库。
 
 [下载最新版](https://github.com/shiyu54/cyber-manju-releases/releases/latest) · [全部版本](https://github.com/shiyu54/cyber-manju-releases/releases)
 
@@ -14,6 +14,16 @@ Windows x64 安装包与正式更新发布仓库。
 从 v1.2.1 起，软件从本仓库的 GitHub Releases 检查正式更新。发现新版本后可在软件内下载安装包，下载完成会核对大小与 SHA-256。点击“查看安装包”，正常退出软件后双击安装包进行更新。
 
 自动检查可在设置中关闭；关闭后不执行启动或定时检查，仍可手动检查。检查更新无需登录原厂账号，不会自动退出软件或中断生成任务。
+
+## macOS（苹果芯片）
+
+从 v1.4.1 起，Release 里另有 macOS 安装包 `cyber-manju-版本号-mac-arm64.dmg`。
+
+1. 只支持苹果芯片（M1 及以后）的 Mac，系统要 macOS 11 或以上；Intel 芯片的 Mac 不能用（左上角苹果图标 →「关于本机」→「芯片」可以查看）。
+2. 安装：双击 `cyber-manju-版本号-mac-arm64.dmg`，把「cyber漫剧」拖进「应用程序」文件夹。
+3. Mac 版暂时没有苹果开发者签名，第一次打开会提示无法验证开发者：先点「完成」，再打开「系统设置 → 隐私与安全性」，拉到最下面点「仍要打开」，输入电脑密码后点「打开」，以后就能正常打开。如果提示「已损坏，无法打开」，打开「终端」运行 `xattr -dr com.apple.quarantine /Applications/cyber漫剧.app` 后再打开。
+4. 打开后点顶栏「配置密钥」，填入聚合中转客户密钥即可使用，功能与同版本的 Windows 版相同。
+5. Mac 版暂不支持自动更新：有新版本时请从发布页下载新的 dmg，再把「cyber漫剧」拖进「应用程序」替换；项目、素材和密钥保存在本机，不受影响。
 
 ## 发行配置
 
@@ -30,6 +40,7 @@ Windows x64 安装包与正式更新发布仓库。
 每个正式 Release 包含：
 
 - Windows 安装包；
+- macOS 安装包（dmg，从 v1.4.1 起，暂不在自动更新里）；
 - `cyber-update.json`：应用标识、版本、更新说明、安装包地址、字节数与 SHA-256；
 - `SHA256SUMS.txt`：供手动校验的哈希；
 - 安装说明。
